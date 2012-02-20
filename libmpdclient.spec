@@ -1,5 +1,5 @@
 %define name libmpdclient
-%define version 2.6
+%define version 2.7
 %define major   2
 %define libname %mklibname mpdclient %{major}
 %define develname %mklibname -d mpdclient
@@ -7,14 +7,13 @@
 
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 1
+Release:	1
 Summary:	API library for interfacing MPD in the C, C++ & Objective C languages
 Group:		System/Libraries
 License:	BSD
 Url:		http://mpd.wikia.com/wiki/ClientLib:libmpdclient
 Source0:	http://dl.sourceforge.net/project/musicpd/%{name}/%{version}/%{name}-%{version}.tar.bz2
 BuildRequires:	doxygen
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 A stable, documented, asynchronous API library for interfacing MPD in the C, 
@@ -31,7 +30,6 @@ A stable, documented, asynchronous API library for interfacing MPD in the C,
 C++ & Objective C languages.
 
 %files -n %{libname}
-%defattr(-,root,root,-)
 %{_libdir}/%{name}.so.%{major}*
 #-----------------------------------------------------------------------------
 
@@ -46,7 +44,6 @@ Group:		Development/C
 Devel headers for libmpdclient
 
 %files -n %{develname}
-%defattr(-,root,root,-)
 %doc COPYING NEWS README
 %{_datadir}/doc/%{name}/*
 %{_libdir}/pkgconfig/%{name}.pc
@@ -66,9 +63,7 @@ Group:		Development/C
 Devel headers for libmpdclient
 
 %files -n %stdevelname
-%defattr(-,root,root,-)
 %{_libdir}/%{name}.a
-%{_libdir}/%{name}.la
 #-----------------------------------------------------------------------------
 
 %prep
@@ -80,8 +75,5 @@ Devel headers for libmpdclient
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
-
-%clean
-rm -rf %{buildroot}
+rm -rf %buildroot/%{_libdir}/*.la
