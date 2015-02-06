@@ -7,7 +7,7 @@
 
 Name:		%{name}
 Version:	%{version}
-Release:	3
+Release:	4
 Summary:	API library for interfacing MPD in the C, C++ & Objective C languages
 Group:		System/Libraries
 License:	BSD
@@ -20,7 +20,6 @@ BuildRequires:	doxygen
 A stable, documented, asynchronous API library for interfacing MPD in the C, 
 C++ & Objective C languages.
 
-#-----------------------------------------------------------------------------
 %package -n %{libname}
 Summary:	API library for interfacing MPD in the C, C++ & Objective C languages
 Provides:	%{name} = %{version}-%{release}
@@ -32,9 +31,7 @@ C++ & Objective C languages.
 
 %files -n %{libname}
 %{_libdir}/%{name}.so.%{major}*
-#-----------------------------------------------------------------------------
 
-#-----------------------------------------------------------------------------
 %package -n %{develname}
 Summary:	Devel headers for %{name}
 Requires:	%{libname} = %{version}
@@ -51,9 +48,7 @@ Devel headers for libmpdclient
 %dir %{_includedir}/mpd/
 %{_includedir}/mpd/*
 %{_libdir}/%{name}.so
-#-----------------------------------------------------------------------------
 
-#-----------------------------------------------------------------------------
 %package -n %{stdevelname}
 Summary:	Devel headers for %{name}
 Requires:	%{libname} = %{version}
@@ -70,36 +65,11 @@ Devel headers for libmpdclient
 %prep
 %setup -q
 %patch1 -p0 -b .automake113
-%build
 ./autogen.sh
-%configure2_5x
+
+%build
+%configure	--enable-static
 %make
 
 %install
 %makeinstall_std
-rm -rf %buildroot/%{_libdir}/*.la
-
-
-%changelog
-* Mon Feb 20 2012 Alexander Khrukin <akhrukin@mandriva.org> 2.7-1
-+ Revision: 778136
-- version update 2.7
-
-* Mon Nov 07 2011 Andrey Bondrov <abondrov@mandriva.org> 2.6-1
-+ Revision: 725926
-- New version 2.6, new URL, spec cleanup
-
-* Sun Aug 08 2010 Rémy Clouard <shikamaru@mandriva.org> 2.3-1mdv2011.0
-+ Revision: 567657
-- bump release
-- fix Source URL
-- remove tabs
-
-* Sun Jan 10 2010 Rémy Clouard <shikamaru@mandriva.org> 2.1-1mdv2010.1
-+ Revision: 488717
-- bump release
-
-* Wed Nov 04 2009 Rémy Clouard <shikamaru@mandriva.org> 2.0-1mdv2010.1
-+ Revision: 460414
-- import libmpdclient
-
