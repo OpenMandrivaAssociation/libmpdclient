@@ -7,7 +7,7 @@
 
 Name:		%{name}
 Version:	%{version}
-Release:	2
+Release:	3
 Summary:	API library for interfacing MPD in the C, C++ & Objective C languages
 Group:		System/Libraries
 License:	BSD
