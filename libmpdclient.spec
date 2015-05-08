@@ -47,6 +47,7 @@ Devel headers for libmpdclient
 %dir %{_includedir}/mpd/
 %{_includedir}/mpd/*
 %{_libdir}/%{name}.so
+%{_datadir}/vala/vapi/libmpdclient.vapi
 
 %package -n %{stdevelname}
 Summary:	Devel headers for %{name}
