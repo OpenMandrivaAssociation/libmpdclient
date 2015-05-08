@@ -1,2 +1,4 @@
+removed_sources:
+  libmpdclient-2.7.tar.bz2: a8ec78f6a7ae051fbf1cc0f47564301423c281b0
 sources:
-  "libmpdclient-2.7.tar.bz2": a8ec78f6a7ae051fbf1cc0f47564301423c281b0
+  libmpdclient-2.10.tar.xz: 32e090b70fa91978734830c67527e8e2fca70225

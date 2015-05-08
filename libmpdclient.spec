@@ -1,5 +1,5 @@
 %define name libmpdclient
-%define version 2.7
+%define version 2.10
 %define major   2
 %define libname %mklibname mpdclient %{major}
 %define develname %mklibname -d mpdclient
@@ -7,13 +7,12 @@
 
 Name:		%{name}
 Version:	%{version}
-Release:	4
+Release:	1
 Summary:	API library for interfacing MPD in the C, C++ & Objective C languages
 Group:		System/Libraries
 License:	BSD
 Url:		http://mpd.wikia.com/wiki/ClientLib:libmpdclient
-Source0:	http://dl.sourceforge.net/project/musicpd/%{name}/%{version}/%{name}-%{version}.tar.bz2
-Patch1:		libmpdclient-2.7-automake1.13.patch
+Source0:	http://dl.sourceforge.net/project/musicpd/%{name}/%{version}/%{name}-%{version}.tar.xz
 BuildRequires:	doxygen
 
 %description
@@ -64,8 +63,7 @@ Devel headers for libmpdclient
 
 %prep
 %setup -q
-%patch1 -p0 -b .automake113
-./autogen.sh
+%apply_patches
 
 %build
 %configure	--enable-static
