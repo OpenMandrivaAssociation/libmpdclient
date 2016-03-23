@@ -9,7 +9,7 @@ Summary:	API library for interfacing MPD in the C, C++ & Objective C languages
 Group:		System/Libraries
 License:	BSD
 Url:		http://www.musicpd.org
-Source0:	http://www.musicpd.org/download/%{name}/2/%{name}-%{version}.tar.xz
+Source0:	http://www.musicpd.org/download/libmpdclient/2/%{name}-%{version}.tar.xz
 BuildRequires:	doxygen
 
 %description
