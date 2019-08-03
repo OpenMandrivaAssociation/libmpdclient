@@ -45,14 +45,12 @@ Requires:	%{libname} = %{version}
 Devel headers for %{name}.
 
 %files -n %{develname}
-%doc COPYING NEWS README
-%doc doc/api/html/*
-%{_datadir}/doc/%{name}/*
+%doc COPYING NEWS README*
+%{_docdir}/%{name}/
 %{_datadir}/vala/vapi/%{name}.vapi
-%dir %{_includedir}/mpd/
-%{_includedir}/mpd/*.h
-%{_libdir}/%{name}.so
 %{_libdir}/pkgconfig/%{name}.pc
+%{_includedir}/mpd/
+%{_libdir}/%{name}.so
 
 #-----------------------------------------------------------------------------
 
