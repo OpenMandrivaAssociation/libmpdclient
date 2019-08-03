@@ -3,8 +3,8 @@
 %define	develname	%mklibname -d mpdclient
 
 Name:		libmpdclient
-Version:	2.10
-Release:	2
+Version:	2.16
+Release:	1
 Summary:	API library for interfacing MPD in the C, C++ & Objective C languages
 Group:		System/Libraries
 License:	BSD
@@ -56,16 +56,15 @@ Devel headers for %{name}.
 #-----------------------------------------------------------------------------
 
 %prep
-%setup -q
-
+%autosetup -p1
 
 %build
-%configure2_5x --disable-static
-%make
+%configure --disable-static
+%make_build
 
 
 %install
-%makeinstall_std
+%make_install
 
 
 %changelog
