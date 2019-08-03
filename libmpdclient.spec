@@ -11,6 +11,7 @@ License:	BSD
 Url:		http://www.musicpd.org
 Source0:	http://www.musicpd.org/download/libmpdclient/2/%{name}-%{version}.tar.xz
 BuildRequires:	doxygen
+BuildRequires:  meson
 
 %description
 A stable, documented, asynchronous API library for interfacing MPD in the C, 
@@ -59,12 +60,11 @@ Devel headers for %{name}.
 %autosetup -p1
 
 %build
-%configure --disable-static
-%make_build
-
+%meson
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 
 %changelog
