@@ -3,7 +3,7 @@
 %define	develname	%mklibname -d mpdclient
 
 Name:		libmpdclient
-Version:	2.18
+Version:	2.19
 Release:	1
 Summary:	API library for interfacing MPD in the C, C++ & Objective C languages
 Group:		System/Libraries
