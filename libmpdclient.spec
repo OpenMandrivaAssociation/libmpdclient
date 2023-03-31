@@ -4,7 +4,7 @@
 
 Name:		libmpdclient
 Version:	2.20
-Release:	1
+Release:	2
 Summary:	API library for interfacing MPD in the C, C++ & Objective C languages
 Group:		System/Libraries
 License:	BSD
