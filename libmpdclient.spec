@@ -1,10 +1,11 @@
 %define	major	2
-%define	libname		%mklibname mpdclient %{major}
+%define	libname		%mklibname mpdclient1
+%define	oldlibname		%mklibname mpdclient 2
 %define	develname	%mklibname -d mpdclient
 
 Name:		libmpdclient
-Version:	2.20
-Release:	2
+Version:	2.22
+Release:	1
 Summary:	API library for interfacing MPD in the C, C++ & Objective C languages
 Group:		System/Libraries
 License:	BSD
@@ -23,6 +24,7 @@ C++ & Objective C languages.
 Summary:	API library for interfacing MPD in the C, C++ & Objective C languages
 Group:		System/Libraries
 Provides:	%{name} = %{version}-%{release}
+%rename %{oldlibname}
 Requires:	mpd >= 0.18
 
 %description -n %{libname}
