@@ -11,6 +11,7 @@ Group:		System/Libraries
 License:	BSD
 Url:		http://www.musicpd.org
 Source0:	http://www.musicpd.org/download/libmpdclient/2/%{name}-%{version}.tar.xz
+BuildRequires:  gettext
 BuildRequires:	doxygen
 BuildRequires:  meson
 
