@@ -11,7 +11,7 @@ Group:		System/Libraries
 License:	BSD
 Url:		http://www.musicpd.org
 Source0:	http://www.musicpd.org/download/libmpdclient/2/%{name}-%{version}.tar.xz
-BuildRequires:  gettext
+
 BuildRequires:	doxygen
 BuildRequires:  meson
 
@@ -33,7 +33,6 @@ A stable, documented, asynchronous API library for interfacing MPD in the C,
 C++ & Objective C languages.
 
 %files -n %{libname}
-%doc COPYING
 %{_libdir}/%{name}.so.%{major}*
 
 #-----------------------------------------------------------------------------
@@ -48,7 +47,7 @@ Requires:	%{libname} = %{version}
 Devel headers for %{name}.
 
 %files -n %{develname}
-%doc COPYING NEWS README*
+%doc NEWS README*
 %{_docdir}/%{name}/
 %{_datadir}/vala/vapi/%{name}.vapi
 %{_libdir}/pkgconfig/%{name}.pc
