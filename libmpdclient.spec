@@ -49,7 +49,6 @@ Devel headers for %{name}.
 %files -n %{develname}
 %doc NEWS README*
 %{_docdir}/%{name}/
-%{_datadir}/vala/vapi/%{name}.vapi
 %{_libdir}/pkgconfig/%{name}.pc
 %{_includedir}/mpd/
 %{_libdir}/%{name}.so
