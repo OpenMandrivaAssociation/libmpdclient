@@ -6,7 +6,7 @@
 Summary:	API library for interfacing MPD in the C, C++ & Objective C languages
 Name:	libmpdclient
 Version:	2.23
-Release:	2
+Release:	3
 Group:	System/Libraries
 License:	BSD
 Url:		https://www.musicpd.org
@@ -25,7 +25,7 @@ Summary:	API library for interfacing MPD in the C, C++ & Objective C languages
 Group:		System/Libraries
 Provides:	%{name} = %{version}-%{release}
 %rename %{oldlibname}
-Requires:	mpd >= 0.24.4
+Recommends:	mpd >= 0.24.4
 
 %description -n %{libname}
 A stable, documented, asynchronous API library for interfacing MPD in the C, 
