@@ -5,14 +5,15 @@
 
 Summary:	API library for interfacing MPD in the C, C++ & Objective C languages
 Name:	libmpdclient
-Version:	2.23
-Release:	3
+Version:	2.25
+Release:	1
 Group:	System/Libraries
 License:	BSD
 Url:		https://www.musicpd.org
 Source0:	http://www.musicpd.org/download/libmpdclient/2/%{name}-%{version}.tar.xz
 BuildRequires:	doxygen
 BuildRequires:	meson
+BuildRequires:	ninja
 
 %description
 A stable, documented, asynchronous API library for interfacing MPD in the C, 
@@ -25,7 +26,7 @@ Summary:	API library for interfacing MPD in the C, C++ & Objective C languages
 Group:		System/Libraries
 Provides:	%{name} = %{version}-%{release}
 %rename %{oldlibname}
-Recommends:	mpd >= 0.24.4
+Recommends:	mpd >= 0.24.12
 
 %description -n %{libname}
 A stable, documented, asynchronous API library for interfacing MPD in the C, 
@@ -65,3 +66,7 @@ Devel headers for %{name}.
 
 %install
 %meson_install
+
+# We pick them with our macro
+rm -f %{buildroot}%{_docdir}/%{name}/NEWS
+rm -f %{buildroot}%{_docdir}/%{name}/README.rst
