@@ -5,7 +5,7 @@
 
 Summary:	API library for interfacing MPD in the C, C++ & Objective C languages
 Name:	libmpdclient
-Version:	2.25
+Version:	2.26
 Release:	1
 Group:	System/Libraries
 License:	BSD
